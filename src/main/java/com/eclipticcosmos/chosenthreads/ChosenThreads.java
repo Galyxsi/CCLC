@@ -1,5 +1,13 @@
 package com.eclipticcosmos.chosenthreads;
 
+import com.eclipticcosmos.chosenthreads.species.VarynBaseSpecies;
+import com.eclipticcosmos.chosenthreads.species.VarynBira;
+import com.mojang.brigadier.CommandDispatcher;
+import com.mojang.brigadier.arguments.StringArgumentType;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.Commands;
+import net.minecraft.server.level.ServerPlayer;
+import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -33,6 +41,9 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+
+import java.util.Objects;
+import java.util.function.Supplier;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(ChosenThreads.MODID)
@@ -91,6 +102,42 @@ public class ChosenThreads
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
+        VarynRegistry.register(new VarynBira());
+
+
+    }
+
+    @SubscribeEvent
+    public void onCommandRegister(RegisterCommandsEvent event) {
+        CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
+
+        dispatcher.register(
+                Commands.literal("setvaryn")
+                        .then(Commands.argument("id", StringArgumentType.word())
+                                .executes(ctx -> {
+                                    ServerPlayer player = ctx.getSource().getPlayerOrException();
+                                    String id = StringArgumentType.getString(ctx, "id");
+                                    VarynBaseSpecies oldSpecies = VarynRegistry.get(VarynHandler.getSpecies(player));
+                                    if (oldSpecies != null) {
+                                        oldSpecies.removeModifiers(player);
+                                    }
+                                    if (VarynRegistry.validVaryn(id) || id.equals("remove")) {
+                                        VarynHandler.setSpecies(player, id);
+                                        if (id.equals("remove"))
+                                        {
+                                            ctx.getSource().sendSuccess(() -> Component.literal("Species Removed"), true);
+                                        } else {
+                                            ctx.getSource().sendSuccess(() -> Component.literal("Species set to " + id), true);
+                                        }
+                                        return 1;
+                                    } else {
+                                        ctx.getSource().sendFailure(Component.literal("Species id: " + id + " is not valid."));
+                                        return 0;
+                                    }
+
+                                }))
+        );
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
