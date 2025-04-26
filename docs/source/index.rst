@@ -1,12 +1,14 @@
-Welcome to Lumache's documentation!
+Welcome to the documentation to Chosen Threads!
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+**Chosen Threads** is a Minecraft mod for Neoforge 1.21.1,
+based around the Origins mod.
 
-Check out the :doc:`usage` section for further information, including
+Chosen Threads works off of the **Thread System**, letting you choose a Varyn (species)
+out of a Thread (group) of them, each Varyn giving you unique advantages and disadvantages based
+on how each Varyn interact with the world around them
+
+Check out the :doc:`varyn` section for further information, including
 how to :ref:`installation` the project.
 
 .. note::
@@ -18,5 +20,4 @@ Contents
 
 .. toctree::
 
-   usage
-   api
+   varyn
