@@ -1,0 +1,18 @@
+{
+  "parent": "cclc:cardreader/ccmodem",
+  "textures": {
+    "0": "cclc:block/ccmodem"
+  },
+  "name": {
+    "translate": "lightmanscurrency.block_variant.create",
+    "with": [
+      {
+        "translate": "lightmanscurrency.block_variant.create.table_cloth",
+        "with": [{ "translate": "lightmanscurrency.block_variant.create.andesite_casing" }]
+      }
+    ]
+  },
+  "target": [
+    "cclc:cardreader"
+  ]
+}

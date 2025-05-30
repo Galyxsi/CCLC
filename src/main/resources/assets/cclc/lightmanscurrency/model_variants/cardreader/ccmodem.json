@@ -1,0 +1,18 @@
+{
+  "item": "cclc:item/ccmodem",
+  "dummy": true,
+  "models": [
+    "cclc:block/ccmodem"
+  ],
+  "tooltip_info": {
+    "item": true,
+    "jade": false,
+    "selection": true,
+    "tooltip": [
+      {
+        "translate": "lightmanscurrency.block_variant.modifier",
+        "with": [{ "translate": "lightmanscurrency.block_variant.modifier.default" }]
+      }
+    ]
+  }
+}

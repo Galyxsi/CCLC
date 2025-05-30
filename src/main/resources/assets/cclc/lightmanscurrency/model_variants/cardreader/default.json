@@ -1,0 +1,18 @@
+{
+  "item": "cclc:item/cardreader",
+  "dummy": true,
+  "models": [
+    "cclc:block/cardreader"
+  ],
+  "tooltip_info": {
+    "item": false,
+    "jade": false,
+    "selection": true,
+    "tooltip": [
+      {
+        "translate": "lightmanscurrency.block_variant.modifier",
+        "with": [{ "translate": "lightmanscurrency.block_variant.modifier.default" }]
+      }
+    ]
+  }
+}

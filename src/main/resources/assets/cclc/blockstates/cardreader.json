@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "facing=south": { "model": "cclc:block/cardreader" },
+    "facing=west": { "model": "cclc:block/cardreader",
+      "y": 90
+    },
+    "facing=north": { "model": "cclc:block/cardreader",
+      "y": 180
+    },
+    "facing=east": { "model": "cclc:block/cardreader",
+      "y": 270
+    }
+  }
+}

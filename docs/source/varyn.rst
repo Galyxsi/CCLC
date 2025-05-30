@@ -3,7 +3,7 @@ Varyn
 
 .. _description:
 
-Varyn
+Selection
 ------------
 
 To select a Varyn, the current method is to simply use the /setvaryn command
