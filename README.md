@@ -1,25 +1,44 @@
+CCLC is a mod that adds compatibility between the ComputerCraft and Lightman's Currency mods, allowing you to make programs that integrate currency.
 
-Installation information
+Requirements:
+Lightman's Currency
+
+CC:Tweaked
+
+(CC:Tweaked only receives updates through Modrinth. CCLC tries to target the latest version of CC:Tweaked, though should be compatible with older versions)
+
+ 
+
+What it does:
 =======
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+It adds a block called the Trade Link, craftable with a few LC blocks and gold, that you can connect to a CC: Tweaked computer (via wired modem or direct connection) in order to unlock new functions in your programs.
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+How do I use it?
+=======
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+Interacting with a Trade Link allows you to open its GUI, which contains many slots to input coins into, along with an ATM Card, and will display the current balance it contains. When connecting it to a Computer, you can access it just as any other peripheral, with the ID cclc:cardreader, in order to gain access to its Lua functions.
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+Currently Implemented Functions
+=======
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+GetBalance() - Allows getting the current balance in the Trade Link, in a formatted String value
+GetNumericalBalance() - Allows getting the current balance in the Trade Link, in a direct numerical value
+getAllAccounts() - Returns a List of Strings, formatted to show an account by name followed by a constant ID to access it with
+payAccount(int accountID, int amount) - Allows withdrawing currency from the Trade Link to send to a player or team's account. The Trade Link automatically transfers coins/gives change when needed.
+ 
+
+Future Plans
+=======
+
+In the future, there are plans for:
+
+Turtles being able to use the Trade Link
+Pocket Computers being able to use the Trade Link
+Allowing access and function to pay for trades/transactions available through trade networks
+Variant selection using the LC Variant Wand
+
+Questions, Bugs, or Suggestions?
+=======
+
+Feel free to comment or open issues in the Github (Here)! Feedback's always welcome!
