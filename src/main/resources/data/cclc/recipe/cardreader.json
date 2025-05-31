@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "BCB",
+    "DDD"
+  ],
+  "key": {
+    "A": { "item" : "minecraft:stone"},
+    "B": { "item" : "lightmanscurrency:coin_chest" },
+    "C": { "item" : "lightmanscurrency:cash_register" },
+    "D": { "item" : "minecraft:gold_ingot" }
+  },
+  "result": {
+    "id": "cclc:cardreader"
+  }
+}

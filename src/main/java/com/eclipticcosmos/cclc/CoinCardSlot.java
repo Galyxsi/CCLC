@@ -5,6 +5,7 @@ import java.util.List;
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.util.Pair;
 
+import io.github.lightman314.lightmanscurrency.LCTags;
 import io.github.lightman314.lightmanscurrency.api.money.MoneyAPI;
 import io.github.lightman314.lightmanscurrency.api.money.coins.CoinAPI;
 import io.github.lightman314.lightmanscurrency.common.core.ModItems;
@@ -32,7 +33,7 @@ public class CoinCardSlot extends CoinSlot {
     @Override
     public boolean mayPlace(@Nonnull ItemStack stack) {
 
-        if(!MoneyAPI.API.ItemAllowedInMoneySlot(player, stack))
+        if(!MoneyAPI.API.ItemAllowedInMoneySlot(player, stack) /*&& !stack.is(LCTags.Items.WALLET)*/ /*stack.getTags().noneMatch(tag -> tag.equals(LCTags.Items.WALLET))*/)
         {
             return false;
         }

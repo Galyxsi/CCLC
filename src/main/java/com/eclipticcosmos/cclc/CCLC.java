@@ -1,5 +1,6 @@
 package com.eclipticcosmos.cclc;
 
+import io.github.lightman314.lightmanscurrency.ModCreativeGroups;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -87,9 +88,11 @@ public class CCLC
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS)
+
+        if(event.getTabKey().equals(CreativeModeTabs.FUNCTIONAL_BLOCKS))
         {
-            //event.accept(ModBlocks.CARDREADER);
+
+            event.accept(ModBlocks.CARD_READER.get());
         }
     }
 

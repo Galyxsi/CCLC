@@ -28,7 +28,7 @@ public class ModBlocks {
         CARD_READER = register("cardreader",
                 block -> new CardReaderBlockItem(block, new Item.Properties()),
                 () -> new CardReader(
-                BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).strength(2.5f, Float.POSITIVE_INFINITY).sound(SoundType.METAL)
+                BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).strength(3.0f).requiresCorrectToolForDrops().sound(SoundType.METAL)
         ));
     }
 
