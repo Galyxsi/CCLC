@@ -13,7 +13,6 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.Slot;
 
 import javax.annotation.Nonnull;
-import java.awt.*;
 
 public class CardReaderScreen extends EasyMenuScreen<CardReaderMenu> {
 

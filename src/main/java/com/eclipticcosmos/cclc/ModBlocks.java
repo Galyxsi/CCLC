@@ -15,7 +15,7 @@ import java.util.function.Supplier;
 public class ModBlocks {
     public static void init() {}
 
-    private static <T extends Block>ResourceLocation idGetter(T block) { return BuiltInRegistries.BLOCK.getKey(block); }
+    //private static <T extends Block>ResourceLocation idGetter(T block) { return BuiltInRegistries.BLOCK.getKey(block); }
 
     private static Function<Block, Item> getDefaultGenerator() {return block -> new BlockItem(block, new Item.Properties());}
 
@@ -29,10 +29,10 @@ public class ModBlocks {
         ));
     }
 
-    private static <T extends Block> Supplier<T> register(String name, Supplier<T> sup)
+    /*private static <T extends Block> Supplier<T> register(String name, Supplier<T> sup)
     {
         return register(name, getDefaultGenerator(), sup);
-    }
+    }*/
     private static <T extends Block> Supplier<T> register(String name, Function<Block, Item> itemGenerator, Supplier<T> sup)
     {
         Supplier<T> block = ModRegistries.BLOCKS.register(name, sup);
