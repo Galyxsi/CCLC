@@ -1,21 +1,10 @@
 package com.eclipticcosmos.cclc;
 
-import java.util.List;
-
-import com.google.common.collect.Lists;
-import com.mojang.datafixers.util.Pair;
-
-import io.github.lightman314.lightmanscurrency.LCTags;
 import io.github.lightman314.lightmanscurrency.api.money.MoneyAPI;
-import io.github.lightman314.lightmanscurrency.api.money.coins.CoinAPI;
 import io.github.lightman314.lightmanscurrency.common.core.ModItems;
 import io.github.lightman314.lightmanscurrency.common.menus.slots.CoinSlot;
-import io.github.lightman314.lightmanscurrency.common.menus.slots.easy.EasySlot;
-import io.github.lightman314.lightmanscurrency.util.VersionUtil;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.item.ItemStack;
 
 import javax.annotation.Nonnull;

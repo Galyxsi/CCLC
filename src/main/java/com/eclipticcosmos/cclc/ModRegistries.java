@@ -9,8 +9,6 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import java.awt.*;
-
 public class ModRegistries {
 
     public static void register(IEventBus bus) {
@@ -18,7 +16,7 @@ public class ModRegistries {
         ModBlocks.init();
 
         ITEMS.register(bus);
-        ModItems.init();
+        //ModItems.init();
 
         MENUS.register(bus);
         ModMenus.register(bus);
